@@ -326,7 +326,7 @@ class NativeDownloader(Downloader):
         attempts_count = 0
         error_msg = ''
         while attempts_count < max_attempts:
-            r = self.session.get(url, stream=True, headers=headers)
+            r = self.session.get(url, stream=True, headers=headers, verify=False)
 
             if r.status_code != 200:
                 # because in resume state we are downloading only a

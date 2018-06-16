@@ -143,7 +143,7 @@ def login(session, username, password, class_name=None):
 
     # Auth API V3
     r = session.post(AUTH_URL_V3, data=data,
-                     headers=headers, allow_redirects=False)
+                     headers=headers, allow_redirects=False, verify=False)
     try:
         r.raise_for_status()
 
