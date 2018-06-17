@@ -45,7 +45,7 @@ def get_reply(session, url, post=False, data=None, headers=None, quiet=False):
                                headers=request_headers)
     prepared_request = session.prepare_request(request)
 
-    reply = session.send(prepared_request)
+    reply = session.send(prepared_request, proxies={'https':'https://127.0.0.1:8888'}, verify=False)
 
     try:
         reply.raise_for_status()
